@@ -3,8 +3,9 @@
   "description": "",
   "private": false,
   "version": "0.0.1",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "/lib/esm/index.d.ts",
   "author": {
     "name": "Joaqim Planstedt",
     "email": "github@joaqim.xyz"
@@ -18,7 +19,9 @@
     "test": "jest --maxWorkers=3",
     "test:watch": "jest --watch --maxWorkers=3",
     "test:ci": "jest --runInBand",
-    "build": "tsc -p tsconfig-build.json",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig-build.json",
+    "build:cjs": "tsc --module commonjs --outdir lib/cjs -p tsconfig-build.json",
     "docs": "typedoc ./src --out ./docs; touch docs/.nojekyll",
     "prepare": "husky install"
   },

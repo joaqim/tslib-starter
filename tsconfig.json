@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
+    "target": "ES5",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "noImplicitAny": true,
@@ -13,12 +13,13 @@
     "importHelpers": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "outDir": "lib",
+    "outDir": "lib/esm",
     "baseUrl": "src",
     "paths": { "src/*": ["src/*"] },
     "allowJs": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["jest", "reflect-metadata"]
+    "lib": ["ES6", "DOM", "ES2016", "ES2017"],
+    "jsx": "react",
+    "types": ["jest"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "lib", "docs"],
