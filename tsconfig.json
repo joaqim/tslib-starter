@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "outDir": "lib",
+    "baseUrl": "src",
+    "paths": { "src/*": ["src/*"] },
+    "allowJs": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["jest"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib", "docs"],
+  "typedocOptions": {
+    "out": "docs",
+    "entryPoints": "src/index.ts",
+    "exclude": ["**/*.spec.ts", "**/*.spec.tsx", "node_modules"]
+  }
+}
