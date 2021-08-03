@@ -3,8 +3,13 @@
   "description": "",
   "private": false,
   "version": "0.0.1",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "files": [
+    "/lib"
+  ],
+  "license": "Apache-2.0",
   "author": {
     "name": "Joaqim Planstedt",
     "email": "github@joaqim.xyz"
@@ -18,7 +23,9 @@
     "test": "jest --maxWorkers=3",
     "test:watch": "jest --watch --maxWorkers=3",
     "test:ci": "jest --runInBand",
-    "build": "tsc -p tsconfig-build.json",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig-build.json",
+    "build:cjs": "tsc --module CommonJS --outdir lib/cjs -p tsconfig-build.json",
     "docs": "typedoc ./src --out ./docs; touch docs/.nojekyll",
     "prepare": "husky install"
   },
@@ -35,12 +42,17 @@
     "husky": "^7.0.0",
     "jest": "^26.6.0",
     "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "ts-jest": "^26.5.6",
     "ts-node": "^5.0.1",
     "typedoc": "^0.21.4"
   },
-  "license": "Apache-2.0",
   "dependencies": {
     "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
