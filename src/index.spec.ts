@@ -1,11 +1,11 @@
 import * as lib from "./index";
 
-import { ExampleClass } from "./ExampleClass";
+import GameEngine from "./GameEngine";
 
 describe("Modules are exported", function () {
   it("ExampleClass is exported", function () {
-    expect(lib.ExampleClass).toEqual(ExampleClass);
-    expect(lib.ExampleClass).not.toBeNull();
-    expect(lib.ExampleClass).not.toBeUndefined();
+    expect(lib.GameEngine).toEqual(GameEngine);
+    expect(lib.GameEngine).not.toBeNull();
+    expect(lib.GameEngine).not.toBeUndefined();
   });
 });

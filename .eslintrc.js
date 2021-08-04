@@ -20,4 +20,5 @@ module.exports = {
     "prettier/prettier": ["error"],
     "import/prefer-default-export": "off", // Allow single Named-export
   },
+  "no-unused-vars": "off",
 };
