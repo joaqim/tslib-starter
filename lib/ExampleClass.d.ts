@@ -1,3 +1,4 @@
 export declare class ExampleClass {
-    dummy: string;
+    readonly dummy: string;
+    constructor(dummy: string);
 }

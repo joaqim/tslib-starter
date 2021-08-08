@@ -1,3 +1,3 @@
 export class ExampleClass {
-  dummy: string;
+  constructor(readonly dummy: string) {}
 }
