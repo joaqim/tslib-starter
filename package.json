@@ -41,6 +41,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "@joaqim/primed-model": "file:../primed-model",
     "typescript": "^4.3.5"
   }
 }
